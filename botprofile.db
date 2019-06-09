@@ -1,10 +1,9 @@
 //----------------------------------------------------------------------------
 // BotProfile.db
 // Author: Michael S. Booth, Turtle Rock Studios (www.turtlerockstudios.com)
-// Elite bot edits by WaLLy3K 9/09/13 - additional customization by iGame.vn
 //
 // This database defines bot "personalities". 
-// Feel free to edit it and define your own bots.
+// Edited by BadKitty [June 10, 2019].
 //
 
 
@@ -14,26 +13,26 @@
 // All profiles begin with this data and overwrite their own
 //
 Default
-	Skill = 100
-	Aggression = 100
-	ReactionTime = 0.22
-	AttackDelay = 0.10
-	Teamwork = 100
-	AimFocusInitial = 0.22					// initial focus spread in degrees (from desired center)
-	AimFocusDecay = 0.10					// how much focus shrinks per second (.25 = 25% of size after 1 sec)
-	AimFocusOffsetScale = 0.10				// controls accuracy when tracking to target (0 == perfect, should always be < 1)
-	AimfocusInterval = 0.22					// how often focus is adjusted (smaller intervals means better movement tracking)
-	WeaponPreference = CompWeps
+	Skill = 50
+	Aggression = 50
+	ReactionTime = 0.3
+	AttackDelay = 0
+	Teamwork = 75
+	AimFocusInitial = 20			// initial focus spread in degrees (from desired center)
+	AimFocusDecay = 0.7				// how much focus shrinks per second (.25 = 25% of size after 1 sec)
+	AimFocusOffsetScale = 0.30		// controls accuracy when tracking to target (0 == perfect, should always be < 1)
+	AimfocusInterval = 0.8			// how often focus is adjusted (smaller intervals means better movement tracking)
+	WeaponPreference = none
 	Cost = 0
-	Difficulty = HARD
-	VoicePitch = 50
+	Difficulty = NORMAL
+	VoicePitch = 100
 	Skin = 0
-	LookAngleMaxAccelNormal = 4000.0 		// how quickly a bot will move their cross hair look at you (2000.0 default)
-	LookAngleStiffnessNormal = 300.0 		// how quickly a bot will lock onto you (100.0 default)
-	LookAngleDampingNormal = 50.0			// dampen how much will the bot scan the area while not engaged (25.0 default)
-	LookAngleMaxAccelAttacking = 5000.0		// ??how long a bot will keep an interest in their attacker (3000.0 default)
-	LookAngleStiffnessAttacking = 500.0		// how soon after spotting will a bot attack (150.0 default)
-	LookAngleDampingAttacking = 30.0		// dampen how much a bot will compensate for recoil (30.0 default)
+	LookAngleMaxAccelNormal = 2000.0
+	LookAngleStiffnessNormal = 100.0
+	LookAngleDampingNormal = 25.0
+	LookAngleMaxAccelAttacking = 3000.0
+	LookAngleStiffnessAttacking = 150.0
+	LookAngleDampingAttacking = 30.0
 End
 
 //----------------------------------------------------------------------------
@@ -44,30 +43,26 @@ End
 //
 
 // weapon preference templates
+Template Scout
+	WeaponPreference = ssg08
+	WeaponPreference = p250
+End
 
-Template CompWeps
-	WeaponPreference = m4a1
-	WeaponPreference = ak47
-	WeaponPreference = awp
-	WeaponPreference = p90
-	WeaponPreference = awp
-	WeaponPreference = deagle
+Template Gay
+	WeaponPreference = scar20
+	WeaponPreference = g3sg1
 	WeaponPreference = p250
 End
 
 Template Rifle
 	WeaponPreference = m4a1
 	WeaponPreference = ak47
-	WeaponPreference = famas
-	WeaponPreference = galilar
 	WeaponPreference = mp7
 End
 
 Template RifleT
 	WeaponPreference = ak47
 	WeaponPreference = m4a1
-	WeaponPreference = galilar
-	WeaponPreference = famas
 	WeaponPreference = mp7
 End
 
@@ -89,157 +84,190 @@ End
 
 Template Sniper
 	WeaponPreference = awp
-	WeaponPreference = sg550
-	WeaponPreference = g3sg1
 	WeaponPreference = ssg08
-	WeaponPreference = m4a1
-	WeaponPreference = ak47
-	WeaponPreference = mp7
+	WeaponPreference = p250
 End
 
 Template Power
 	WeaponPreference = m249
 	WeaponPreference = xm1014
 	WeaponPreference = nova
-	WeaponPreference = m4a1
-	WeaponPreference = ak47
+	WeaponPreference = famas
+	WeaponPreference = galilar
 	WeaponPreference = mp7
 End
 
 Template Shotgun
-	WeaponPreference = xm1014
 	WeaponPreference = nova
 	WeaponPreference = mag7
 	WeaponPreference = sawedoff
-	WeaponPreference = m4a1
-	WeaponPreference = ak47
+	WeaponPreference = xm1014
 End
 
 Template Spray
-	WeaponPreference = m4a1
-	WeaponPreference = ak47
+	WeaponPreference = mp7
 	WeaponPreference = p90
 	WeaponPreference = mp9
 	WeaponPreference = mac10
-	WeaponPreference = mp7
-	WeaponPreference = ump45
 End
 
-// Global Elite Challenge (High End Tier 3) [Tested]
-Template Elite 
+
+// skill templates
+Template Weeaboo
 	Skill = 100
+	Rank = 2000
 	Aggression = 100
-	ReactionTime = 0.01
-	AttackDelay = 0.05
+	ReactionTime = 0
+	AttackDelay = 0
 	Cost = 4
 	Difficulty = EXPERT
-	WeaponPreference = CompWeps
-	VoicePitch = 40
-	AimFocusInitial = 0.01 			// initial focus spread in degrees (from desired center)
-	AimFocusDecay = 0.01			// how much focus shrinks per second (.25 = 25% of size after 1 sec)
-	AimFocusOffsetScale = 0.01		// controls accuracy when tracking to target (0 == perfect, should always be < 1)
-	AimfocusInterval = 0.01			// how often focus is adjusted (smaller intervals means better movement tracking)
-	LookAngleStiffnessAttacking = 150.0		// how soon after spotting will a bot attack (500.0 template)
-	LookAngleDampingAttacking = 15.0		// dampen how much a bot will compensate for recoil (30.0 default)
+	VoicePitch = 80
+	AimFocusInitial = 0.01
+	AimFocusDecay = 0.01
+	AimFocusOffsetScale = 0
+	AimfocusInterval = 0.01
+	LookAngleMaxAccelNormal = 10000.0
+	LookAngleStiffnessNormal = 50.0
+	LookAngleDampingNormal = 10.0
+	LookAngleMaxAccelAttacking = 10000.0
+	LookAngleStiffnessAttacking = 50.0
+	LookAngleDampingAttacking = 10.0
 End
 
-// Elite Master Guardian Challenge (Low End Tier 3) [Tested]
-Template Expert
+Template Pro
 	Skill = 100
+	Rank = 2000
 	Aggression = 100
-	ReactionTime = 0.22
+	ReactionTime = 0.01
+	AttackDelay = 0.01
 	Cost = 4
+	Difficulty = EXPERT
+	VoicePitch = 90
+	AimFocusInitial = 0.01
+	AimFocusDecay = 0.01
+	AimFocusOffsetScale = 0.01
+	AimfocusInterval = 0.01
+	LookAngleMaxAccelNormal = 5000.0
+	LookAngleStiffnessNormal = 100.0
+	LookAngleDampingNormal = 25.0
+	LookAngleMaxAccelAttacking = 5000.0
+	LookAngleStiffnessAttacking = 150.0
+	LookAngleDampingAttacking = 30.0
+End
+
+Template Elite
+	Skill = 100
+	Rank = 1800
+	Aggression = 95
+	ReactionTime = 0.05
+	Cost = 3
 	Difficulty = HARD
-	WeaponPreference = CompWeps
-	VoicePitch = 50
-	AimFocusInitial = 0.22
-	AimFocusDecay = 0.10
-	AimFocusOffsetScale = 0.10
-	AimfocusInterval = 0.22
-End
-
-// Gold Nova Master Challenge (Mid Tier 2)
-Template VeryHard
-	Skill = 90
-	Aggression = 90
-	ReactionTime = 0.35
-	Cost = 3
-	Difficulty = NORMAL
-	VoicePitch = 75
-	AimFocusInitial = 0.35
-	AimFocusDecay = 0.20
-	AimFocusOffsetScale = 0.20
-	AimfocusInterval = 0.35
-End
-
-// Gold Nova One Challenge (Low Tier 2)
-Template Hard
-	Skill = 90
-	Aggression = 80
-	ReactionTime = 0.45
-	Cost = 3
-	Difficulty = NORMAL
 	VoicePitch = 85
-	AimFocusInitial = 0.45
-	AimFocusDecay = 0.20
-	AimFocusOffsetScale = 0.20
-	AimfocusInterval = 0.45
+	AimFocusInitial = 0.5
+	AimFocusDecay = 0.1
+	AimFocusOffsetScale = 0.05
+	AimfocusInterval = 0.05
 End
 
-// Silver Elite Challenge (High Tier 1)
-Template Tough
+Template Expert
+	Skill = 90
+	Rank = 1600
+	Aggression = 80
+	ReactionTime = 0.20
+	Cost = 3
+	Difficulty = HARD
+	VoicePitch = 88
+	AimFocusInitial = 2
+	AimFocusDecay = 0.2
+	AimFocusOffsetScale = 0.15
+	AimfocusInterval = 0.20
+End
+
+Template VeryHard
 	Skill = 80
-	Aggression = 60
-	ReactionTime = 0.55
+	Rank = 1400
+	Aggression = 70
+	ReactionTime = 0.30
 	Cost = 2
 	Difficulty = NORMAL
-	VoicePitch = 95
-	AimFocusInitial = 0.55
-	AimFocusDecay = 0.30
-	AimFocusOffsetScale = 0.22
-	AimfocusInterval = 0.55
+	VoicePitch = 92
+	AimFocusInitial = 5
+	AimFocusDecay = 0.3
+	AimFocusOffsetScale = 0.17
+	AimfocusInterval = 0.30
 End
 
-// Silver IV Challenge (Mid Tier 1)
-Template Normal
+Template Hard
 	Skill = 75
-	Aggression = 45
-	ReactionTime = 0.80
+	Rank = 1300
+	Aggression = 60
+	ReactionTime = 0.40
 	Cost = 2
+	Difficulty = NORMAL
+	VoicePitch = 94
+	AimFocusInitial = 10
+	AimFocusDecay = 0.4
+	AimFocusOffsetScale = 0.20
+	AimfocusInterval = 0.40
+End
+
+Template Tough
+	Skill = 60
+	Rank = 1100
+	Aggression = 45
+	ReactionTime = 0.50
+	AttackDelay = .70
+	Cost = 2
+	Difficulty = NORMAL
+	VoicePitch = 96
+	AimFocusInitial = 10
+	AimFocusDecay = 0.4
+	AimFocusOffsetScale = 0.25
+	AimfocusInterval = 0.50
+End
+
+Template Normal
+	Skill = 50
+	Rank = 1000
+	Aggression = 30
+	ReactionTime = 0.60
+	AttackDelay = .80
+	Cost = 1
+	Difficulty = EASY
+	AimFocusInitial = 12
+	AimFocusDecay = 0.5
+	AimFocusOffsetScale = 0.35
+	AimfocusInterval = 0.60
+End
+
+Template Fair
+	Skill = 25
+	Rank = 850
+	Aggression = 15
+	ReactionTime = 0.60
+	AttackDelay = .90
+	Cost = 1
+	Difficulty = EASY
+	VoicePitch = 105
+	AimFocusInitial = 17
+	AimFocusDecay = 0.6
+	AimFocusOffsetScale = 0.5
+	AimfocusInterval = 0.70
+End
+
+Template Easy
+	Skill = 5
+	Rank = 600
+	Aggression = 10
+	ReactionTime = 0.60
+	AttackDelay = .70
+	Cost = 1
 	Difficulty = EASY
 	VoicePitch = 110
-	AimFocusInitial = 0.80
-	AimFocusDecay = 0.40
-	AimFocusOffsetScale = 0.25
-	AimfocusInterval = 0.80
-End
-
-// Silver I Challenge (Low Tier 1)
-Template Fair
-	Skill = 75
-	Aggression = 30
-	ReactionTime = 0.90
-	Cost = 1
-	Difficulty = EASY
-	VoicePitch = 120
-	AimFocusInitial = 0.90
-	AimFocusDecay = 0.50
-	AimFocusOffsetScale = 0.28
-	AimfocusInterval = 0.90
-End
-
-// Beginner Challenge (New to FPS & PC Gaming)
-Template Easy
-	Skill = 50
-	Aggression = 20
-	ReactionTime = 1.00
-	Cost = 1
-	Difficulty = EASY
-	VoicePitch = 130
-	AimFocusInitial = 1.00
-	AimFocusDecay = 0.60
-	AimFocusOffsetScale = 0.30
-	AimfocusInterval = 1.00
+	AimFocusInitial = 20
+	AimFocusDecay = 0.7
+	AimFocusOffsetScale = 0.6
+	AimfocusInterval = 0.70
 End
 
 //----------------------------------------------------------------------------
@@ -248,122 +276,107 @@ End
 // Default and then the specified Template(s), in order
 //
 
-Elite Delta
-	Skin = 1
-	VoicePitch = 45
-End
 
-Elite Canary
-	Skin = 2
-	VoicePitch = 45
-End
-
-Elite Violet
-	Skin = 4
-	VoicePitch = 44
-End
-
-Elite Shark
-	Skin = 4
-	VoicePitch = 40
-End
-
-Elite Alpha
-	Skin = 2
-	VoicePitch = 40
-End
-
-Elite Cat
-	Skin = 4
-	VoicePitch = 42
-End
-
-Elite Husky
-	Skin = 2
-	VoicePitch = 48
-End
-
-Elite Salmon
-	Skin = 1
-	VoicePitch = 46
-End
-
-Elite Sheep
-	Skin = 3
-	VoicePitch = 45
-End
-
-Elite Emu
-	Skin = 1
-	VoicePitch = 44
-End
-
-Elite Maple
-	Skin = 4
-	VoicePitch = 49
-End
-
-
-//----------------------------------------
-
-Expert Sonar
-	VoicePitch = 85
-End
-
-Expert Flute
+Weeaboo+Scout BadKitty
 	VoicePitch = 100
 End
 
-Expert Heron
-	VoicePitch = 95
-End
-
-Expert Beta
+Weeaboo+Gay Napkin
 	VoicePitch = 115
 End
 
-Expert Nautilus
+Weeaboo+RifleT Colombo
+	VoicePitch = 110
+End
+
+Weeaboo+RifleT Fred
+	VoicePitch = 110
+End
+
+Weeaboo+Rifle Ryan
+	VoicePitch = 115
+End
+
+Weeaboo+Sniper Curtis
+	VoicePitch = 85
+End
+
+Weeaboo+Sniper Colyn
+	VoicePitch = 110
+End
+
+Weeaboo+Scout Blind
 	VoicePitch = 87
 End
 
-Expert Diamond
+Weeaboo+Rifle Mai-san
 	VoicePitch = 91
 End
 
-Expert Albatross
+Weeaboo+Rifle Mio-chan
+	VoicePitch = 94
+End
+
+Weeaboo+Rifle Tatsumaki
 	VoicePitch = 101
 End
 
-Expert Anchor
+Weeaboo+RifleT Fubuki
 	VoicePitch = 112
 End
 
-Expert Ostrich
-	VoicePitch = 99
-End
-
-Expert Lilly
-	VoicePitch = 100
+Weeaboo+Gay Genos
+	VoicePitch = 82
 End
 
 //----------------------------------------
 
-VeryHard Daisy
+Pro+Rifle f0rest
 	Skin = 1
+	VoicePitch = 95
+End
+
+Pro+Rifle GeT_RiGhT
+	Skin = 2
+	VoicePitch = 105
+End
+
+Pro+RifleT ScreaM
+	Skin = 4
 	VoicePitch = 110
 End
 
-VeryHard Wagon
-	Skin = 3
-	VoicePitch = 93
+Pro+Rifle n0thing
+	Skin = 4
+	VoicePitch = 90
 End
 
-VeryHard Vulture
+Pro+Rifle Shroud
 	Skin = 2
-	VoicePitch = 100
+	VoicePitch = 98
 End
 
-VeryHard Banjo
+Pro+RifleT swag
+	Skin = 1
+	VoicePitch = 96
+End
+
+Pro+Sniper GuardiaN
+	Skin = 3
+	VoicePitch = 105
+End
+
+Pro+Rifle seangares
+	Skin = 3
+	VoicePitch = 115
+End
+
+Pro+RifleT s1mple
+	Skin = 1
+	VoicePitch = 84
+End
+
+Pro+Rifle Zeus
 	Skin = 4
 	VoicePitch = 86
 End
@@ -371,154 +384,293 @@ End
 
 //----------------------------------------
 
-Hard+Rifle Lamb
+Elite+Rifle Cliffe
 	Skin = 1
 	VoicePitch = 95
 End
 
-Hard+RifleT Dart
+Elite+Spray Minh
 	Skin = 2
-	VoicePitch = 90
-End
-
-Hard+Spray Pelican
-	Skin = 4
-	VoicePitch = 102
-End
-
-Hard+Shotgun Zigzag
-	Skin = 1
-	VoicePitch = 98
-End
-
-Hard+Rifle Frog
-	Skin = 2
-	VoicePitch = 96
-End
-
-Hard+Punch Whale
-	Skin = 4
-	VoicePitch = 103
-End
-
-Hard+Punch Flamingo
-	Skin = 1
 	VoicePitch = 105
 End
 
-Hard+Rifle Iguana
-	Skin = 2
-	VoicePitch = 97
-End
-
-Hard+Rifle Woodpecker
+Elite+Shotgun Crusher
 	Skin = 4
 	VoicePitch = 84
 End
 
-Hard+Punch Pyramid
-	Skin = 1
+Elite+Punch Garret
+	Skin = 4
+	VoicePitch = 110
+End
+
+Elite+Power Rock
+	Skin = 2
+	VoicePitch = 80
+End
+
+Elite+PunchT Shark
+	Skin = 4
 	VoicePitch = 90
 End
 
-Hard+Rifle Seal
+Elite+Rifle Wolf
 	Skin = 2
 	VoicePitch = 98
 End
 
-Hard+Sniper Manatee
+Elite+RifleT Gunner
+	Skin = 1
+	VoicePitch = 96
+End
+
+Elite+Sniper Vitaliy
 	Skin = 3
+	VoicePitch = 105
+End
+
+Elite+Punch Ridgway
+	Skin = 3
+	VoicePitch = 115
+End
+
+Elite+RifleT Steel
+	Skin = 1
+	VoicePitch = 84
+End
+
+Elite+PunchT Stone
+	Skin = 4
+	VoicePitch = 86
+End
+
+
+//----------------------------------------
+
+Expert+RifleT Arnold
+	VoicePitch = 85
+End
+
+Expert+Rifle Brett
+	VoicePitch = 100
+End
+
+Expert+Punch Kurt
+	VoicePitch = 95
+End
+
+Expert+Sniper Kyle
+	Cost = 5
+	VoicePitch = 115
+End
+
+Expert+Shotgun Moe
+	VoicePitch = 87
+End
+
+Expert+Rifle Quade
+	VoicePitch = 91
+End
+
+Expert+Rifle Quintin
+	VoicePitch = 101
+End
+
+Expert Ringo
+	VoicePitch = 112
+End
+
+Expert+PunchT Rip
+	VoicePitch = 99
+End
+
+Expert+Rifle Zach
+	VoicePitch = 100
+End
+
+//----------------------------------------
+
+VeryHard+Power Cory
+	Skin = 1
 	VoicePitch = 110
 End
 
-Hard+Spray Sparrow
+VeryHard+Sniper Quinn
+	Skin = 3
+	VoicePitch = 93
+End
+
+VeryHard+Rifle Seth
+	Skin = 2
+	VoicePitch = 100
+End
+
+VeryHard+RifleT Vinny
+	Skin = 4
+	VoicePitch = 86
+End
+
+
+//----------------------------------------
+
+Hard+Rifle Brian
+	Skin = 1
+	VoicePitch = 100
+End
+
+Hard+Rifle Chad
+	Skin = 1
+	VoicePitch = 95
+End
+
+Hard+RifleT Chet
+	Skin = 2
+	VoicePitch = 90
+End
+
+Hard+Spray Gabe
+	Skin = 4
+	VoicePitch = 102
+End
+
+Hard+Shotgun Hank
+	Skin = 1
+	VoicePitch = 98
+End
+
+Hard+RifleT Ivan
+	Skin = 2
+	VoicePitch = 96
+End
+
+Hard+Punch Jim
 	Skin = 4
 	VoicePitch = 103
 End
 
-Hard+Rifle Bulldog
+Hard+PunchT Joe
+	Skin = 1
+	VoicePitch = 105
+End
+
+Hard+Rifle John
+	Skin = 2
+	VoicePitch = 97
+End
+
+Hard+Rifle Tony
+	Skin = 4
+	VoicePitch = 84
+End
+
+Hard+PunchT Tyler
+	Skin = 1
+	VoicePitch = 90
+End
+
+Hard+Rifle Victor
+	Skin = 2
+	VoicePitch = 98
+End
+
+Hard+Sniper Vladimir
+	Skin = 3
+	VoicePitch = 110
+End
+
+Hard+Spray Zane
+	Skin = 4
+	VoicePitch = 103
+End
+
+Hard+Rifle Zim
 	Skin = 2
 	VoicePitch = 110
 End
 
 //----------------------------------------
 
-Tough+Sniper Eclipse
+Tough+Sniper Adrian
 	Skin = 3
 	VoicePitch = 120
 End
 
-Tough+Rifle Cyclone
+Tough+Sniper Bank
+	Skin = 1
+	VoicePitch = 95
+End
+
+Tough+Rifle Brad
 	Skin = 1
 	VoicePitch = 100
 End
 
-Tough+Rifle Robin
+Tough+Rifle Connor
 	Skin = 2
 	VoicePitch = 104
 End
 
-Tough+Rifle Hatchet
+Tough+RifleT Dave
 	Skin = 4
 	VoicePitch = 98
 End
 
-Tough Vortex
+Tough Dan
 	Skin = 1
 	VoicePitch = 100
 End
 
-Tough+Rifle Zebra
+Tough+Rifle Derek
 	Skin = 2
 	VoicePitch = 102
 End
 
-Tough+Shotgun Donkey
+Tough+Shotgun Don
 	Skin = 4
 	VoicePitch = 95
 End
 
-Tough+Rifle Stump
+Tough+Rifle Eric
 	Skin = 1
 	VoicePitch = 95
 End
 
-Tough+RifleT Macaw
+Tough+RifleT Erik
 	Skin = 2
 	VoicePitch = 110
 End
 
-Tough+Rifle Torus
+Tough+Rifle Finn
 	Skin = 4
 	VoicePitch = 112
 End
 
-Tough Snake
+Tough Jeff
 	Skin = 1
 	VoicePitch = 90
 End
 
-Tough+Rifle Goose
+Tough+Rifle Kevin
 	Skin = 2
 	VoicePitch = 115
 End
 
-Tough+Rifle Blackbird
+Tough+RifleT Reed
 	Skin = 4
 	VoicePitch = 107
 End
 
-Tough+Rifle Rose
+Tough+Rifle Rick
 	Skin = 2
 	VoicePitch = 102
 End
 
-Tough Hurricane
+Tough Ted
 	Skin = 1
 	VoicePitch = 98
 End
 
-Tough+Rifle Dalmatian
+Tough+Rifle Troy
 	Skin = 2
 	VoicePitch = 100
 End
@@ -528,17 +680,17 @@ Tough+RifleT Wade
 	VoicePitch = 95
 End
 
-Tough+Rifle Rattle
+Tough+Rifle Wayne
 	Skin = 1
 	VoicePitch = 86
 End
 
-Tough+RifleT Octopus
+Tough+RifleT Xander
 	Skin = 2
 	VoicePitch = 100
 End
 
-Tough+Rifle Bell
+Tough+Rifle Xavier
 	Skin = 4
 	VoicePitch = 95
 End
@@ -571,6 +723,11 @@ Normal+Rifle Dennis
 End
 
 Normal Doug
+	Skin = 2
+	VoicePitch = 110
+End
+
+Normal+Sniper Duffy
 	Skin = 2
 	VoicePitch = 110
 End
@@ -701,6 +858,10 @@ Fair Jason
 	VoicePitch = 116
 End
 
+Fair+Spray Jenssen
+	VoicePitch = 112
+End
+
 Fair Josh
 	VoicePitch = 114
 End
@@ -827,6 +988,10 @@ Easy Irwin
 	VoicePitch = 111
 End
 
+Easy Larry
+	VoicePitch = 105
+End
+
 Easy Lester
 	VoicePitch = 110
 End
@@ -849,6 +1014,10 @@ End
 
 Easy Opie
 	VoicePitch = 125
+End
+
+Easy Ryan
+	VoicePitch = 95
 End
 
 Easy Toby
