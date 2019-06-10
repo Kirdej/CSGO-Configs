@@ -136,7 +136,7 @@ End
 
 Template Pro
 	Skill = 100
-	Rank = 2000
+	Rank = 1900
 	Aggression = 100
 	ReactionTime = 0.01
 	AttackDelay = 0.01
@@ -282,7 +282,7 @@ Weeaboo+Scout BadKitty
 End
 
 Weeaboo+Gay Napkin
-	VoicePitch = 115
+	VoicePitch = 116
 End
 
 Weeaboo+RifleT Colombo
@@ -294,7 +294,7 @@ Weeaboo+RifleT Fred
 End
 
 Weeaboo+Rifle Ryan
-	VoicePitch = 115
+	VoicePitch = 112
 End
 
 Weeaboo+Sniper Curtis
@@ -318,11 +318,15 @@ Weeaboo+Rifle Mio-chan
 End
 
 Weeaboo+Rifle Tatsumaki
-	VoicePitch = 101
+	VoicePitch = 115
 End
 
 Weeaboo+RifleT Fubuki
-	VoicePitch = 112
+	VoicePitch = 114
+End
+
+Weeaboo+Sniper Saitama
+	VoicePitch = 80
 End
 
 Weeaboo+Gay Genos
