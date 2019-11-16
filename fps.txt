@@ -1,0 +1,40 @@
+Rename Fastprox -- actually ~50 more average FPS in CSGO:
+
+* Check current FPS before changing.
+- Navigate to C:\Windows\SysWOW64\wbem
+- Right-click fastprox.dll
+- Select Properties
+- Click on the Security tab
+- Click Advanced
+- Click Change
+- Input your login name as object name to select
+- Click Check Names
+- Click OK
+- Click Apply
+- Click OK
+- Click OK
+- Click Edit
+- Select Administrators
+- Check Full control
+- Click Apply
+- Click Yes
+- Click OK
+- Click OK
+- Right-click fastprox.dll
+- Select Rename
+- Change it to fastprox.dll.old
+- Click Continue on Rename prompt
+- Click Yes on UAC prompt
+- Restart
+
+
+More WMI stuff:
+- Navigate to C:\Windows\System32\wbem\Repository
+- Run cmd as admin
+- Enter net stop winmgmt
+- Delete all files in the Repository folder before the service restarts itself
+- Enter net start winmgmt
+
+
+Steam Friends not connecting:
+Windows Settings> Network & Internet> Network reset
