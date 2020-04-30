@@ -1,7 +1,5 @@
 "VideoConfig"
 {
-    "setting.mat_grain_scale_override"      "1.000000"
-    "setting.mat_monitorgamma"              "2.200000"
     "setting.defaultres"                    "1920"
     "setting.defaultresheight"              "1080"
     "setting.aspectratiomode"               "1"
@@ -11,7 +9,7 @@
     "setting.gpu_mem_level"                 "0"
     "setting.cpu_level"                     "0"
     "setting.gpu_level"                     "2"
-    "setting.mem_level"                     "1"
+    "setting.mem_level"                     "2"
     "setting.mat_queue_mode"                "2"
     "setting.mat_antialias"                 "8"
     "setting.mat_aaquality"                 "0"
